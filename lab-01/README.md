@@ -11,7 +11,7 @@ core.autocrlf=true
 core.editor=code --wait
 init.defaultbranch=main
 pull.rebase=true
-
+```
 
 user.name та user.email записуються в метадані кожного коміту, вказуючи його автора. Електронна адреса має збігатися з тією, що підтверджена на GitHub, інакше коміти не будуть прив'язані до профілю.
 
@@ -58,7 +58,7 @@ trim_trailing_whitespace = true
 
 [*.md]
 trim_trailing_whitespace = false
-
+```
 Файл задає єдині правила форматування: кодування UTF-8, закінчення рядків LF, відступ у 2 пробіли та фінальний перенос рядка.
 
 Завдання 2. Середовища виконання
