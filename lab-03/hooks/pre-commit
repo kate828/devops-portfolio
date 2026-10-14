@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Читаємо список і вміст файлів саме зі staging.
+temp_dir="$(mktemp -d)"
+trap 'rm -rf -- "$temp_dir"' EXIT
+
+git diff --cached --name-only --diff-filter=ACMR -z > "$temp_dir/files"
+result=0
+number=0
+
+while IFS= read -r -d '' file; do
+    [[ "$file" == *.sh ]] || continue
+
+    number=$((number + 1))
+    staged_file="$temp_dir/$number.sh"
+    git show ":$file" > "$staged_file"
+    echo "shellcheck: $file"
+    if ! shellcheck -- "$staged_file"; then
+        result=1
+    fi
+done < "$temp_dir/files"
+
+# Якщо staged .sh файлів немає, result залишається 0.
+exit "$result"
