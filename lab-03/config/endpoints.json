@@ -1,0 +1,53 @@
+{
+  "targets": [
+    {
+      "name": "Working endpoint",
+      "url": "https://example.com/",
+      "expected_status": 200,
+      "timeout": 5,
+      "slow_threshold": 2
+    },
+    {
+      "name": "DNS failure",
+      "url": "https://this-domain-does-not-exist-123456789.example/",
+      "expected_status": 200,
+      "timeout": 5,
+      "slow_threshold": 2
+    },
+    {
+      "name": "Connection refused",
+      "url": "http://127.0.0.1:59999/",
+      "expected_status": 200,
+      "timeout": 3,
+      "slow_threshold": 2
+    },
+    {
+      "name": "Timeout",
+      "url": "http://10.255.255.1/",
+      "expected_status": 200,
+      "timeout": 3,
+      "slow_threshold": 2
+    },
+    {
+      "name": "Certificate error",
+      "url": "https://expired.badssl.com/",
+      "expected_status": 200,
+      "timeout": 5,
+      "slow_threshold": 2
+    },
+    {
+      "name": "Unexpected status",
+      "url": "https://example.com/not-found",
+      "expected_status": 200,
+      "timeout": 5,
+      "slow_threshold": 2
+    },
+    {
+      "name": "Slow response test",
+      "url": "https://example.com/",
+      "expected_status": 200,
+      "timeout": 5,
+      "slow_threshold": 0.001
+    }
+  ]
+}

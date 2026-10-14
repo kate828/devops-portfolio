@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+lab_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+
+echo "[pre-push] Running tests..."
+
+if bash "$lab_dir/tests/test_backup.sh"; then
+    echo "push allowed"
+    exit 0
+else
+    echo "[pre-push] Tests failed." >&2
+    echo "push cancelled"
+    exit 1
+fi
