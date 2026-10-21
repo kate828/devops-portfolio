@@ -97,6 +97,7 @@ python api_monitor.py --config config/endpoints.json --output results.json
 
 Виникає, коли відповідь не надходить у межах установленого часу очікування.
 
+
 Тип помилки: `TIMEOUT`.
 
 #### Certificate error

@@ -1,68 +1,68 @@
 {
-  "check_time": "2026-10-13 19:47:35",
+  "check_time": "2026-10-14 10:13:45",
   "results": [
     {
-      "time": "2026-10-13 19:47:23",
+      "time": "2026-10-14 10:13:34",
       "target": "Working endpoint",
       "url": "https://example.com/",
       "status": "OK",
-      "response_time": 0.295,
+      "response_time": 0.15,
       "failure_type": null,
       "details": "HTTP 200"
     },
     {
-      "time": "2026-10-13 19:47:24",
+      "time": "2026-10-14 10:13:34",
       "target": "DNS failure",
       "url": "https://this-domain-does-not-exist-123456789.example/",
       "status": "PROBLEM",
-      "response_time": 0.098,
+      "response_time": 0.054,
       "failure_type": "DNS",
       "details": "[Errno 11001] getaddrinfo failed"
     },
     {
-      "time": "2026-10-13 19:47:28",
+      "time": "2026-10-14 10:13:38",
       "target": "Connection refused",
       "url": "http://127.0.0.1:59999/",
       "status": "PROBLEM",
-      "response_time": 2.042,
+      "response_time": 2.041,
       "failure_type": "CONNECTION_REFUSED",
       "details": "[WinError 10061] No connection could be made because the target machine actively refused it"
     },
     {
-      "time": "2026-10-13 19:47:34",
+      "time": "2026-10-14 10:13:44",
       "target": "Timeout",
       "url": "http://10.255.255.1/",
       "status": "PROBLEM",
-      "response_time": 3.015,
+      "response_time": 3.004,
       "failure_type": "TIMEOUT",
       "details": "timed out"
     },
     {
-      "time": "2026-10-13 19:47:35",
+      "time": "2026-10-14 10:13:45",
       "target": "Certificate error",
       "url": "https://expired.badssl.com/",
       "status": "PROBLEM",
-      "response_time": 0.395,
+      "response_time": 0.5,
       "failure_type": "CERTIFICATE_ERROR",
       "details": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)"
     },
     {
-      "time": "2026-10-13 19:47:35",
+      "time": "2026-10-14 10:13:45",
       "target": "Unexpected status",
       "url": "https://example.com/not-found",
       "status": "PROBLEM",
-      "response_time": 0.182,
+      "response_time": 0.116,
       "failure_type": "UNEXPECTED_STATUS",
       "details": "HTTP 404, очікувався HTTP 200"
     },
     {
-      "time": "2026-10-13 19:47:35",
+      "time": "2026-10-14 10:13:45",
       "target": "Slow response test",
       "url": "https://example.com/",
       "status": "PROBLEM",
-      "response_time": 0.176,
+      "response_time": 0.117,
       "failure_type": "SLOW_RESPONSE",
-      "details": "Час відповіді 0.176s перевищив поріг 0.001s"
+      "details": "Час відповіді 0.117s перевищив поріг 0.001s"
     }
   ]
 }
